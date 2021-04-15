@@ -68,7 +68,7 @@ router.get('/hottest',async(req,res)=>{
     res.status(400).send("No Articles Published Yet")
 })
 router.post('/publish',upload.single('articleImage'),async(req,res)=>{
-    let article = await Article.findOne({user:{_id: req.user._id},title: req.body.title})
+    let article = await Article.findOne({"user._id": req.user._id,title: req.body.title})
     console.log("publish ",article)
     if(!article){
         let user = await User.findById(req.user._id)
