@@ -1,9 +1,14 @@
 const mongoose = require('mongoose')
 
 const Article = new mongoose.model('Article',new mongoose.Schema({
-    user_id:{
-        type: mongoose.Types.ObjectId,
-        required: true
+    user:{
+        _id:{
+            type: mongoose.Types.ObjectId,
+            required: true
+        },
+        name:{
+            type: String
+        }
     },
     title:{
         type: String,
