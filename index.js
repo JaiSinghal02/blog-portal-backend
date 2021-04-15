@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
 app.use('/api/signup',user)
 app.use('/api/signin',auth)
 app.use('/uploads',express.static('uploads'))
-app.use(authMiddleWare)
+app.use('/api/article',authMiddleWare)
 app.use('/api/article',article)
 
 const port = process.env.PORT || 5000
