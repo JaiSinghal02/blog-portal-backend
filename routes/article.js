@@ -82,16 +82,13 @@ router.post('/publish',upload.single('articleImage'),async(req,res)=>{
             }
         })
         await article.save()
-        console.log("saved article is-->",article)
         return res.status(200).send(article)
 
     }
     res.status(400).send("Article with same Title")
 })
 router.post('/like',async(req,res)=>{
-    console.log("body",req.body)
     let oldArticle = await Article.findById(req.body._id)
-    console.log("-->",oldArticle)
     if(oldArticle){
         let newArticle= await Article.findByIdAndUpdate(req.body._id,{
             $set:{
@@ -103,9 +100,7 @@ router.post('/like',async(req,res)=>{
     res.status(400).send("Invalid ! No such article present")
 })
 router.post('/dislike',async(req,res)=>{
-    console.log("body",req.body)
     let oldArticle = await Article.findById(req.body._id)
-    console.log("-->",oldArticle)
     if(oldArticle){
         let newArticle= await Article.findByIdAndUpdate(req.body._id,{
             $set:{
