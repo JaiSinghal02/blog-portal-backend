@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://jaisinghal02.github.io/blog-portal-backend",
   "scripts": {
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
